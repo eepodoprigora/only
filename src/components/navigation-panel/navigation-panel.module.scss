@@ -1,0 +1,83 @@
+@use "../../styles/vars" as v;
+
+.navigation {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  width: 53px;
+
+  @include v.min-width(ipad) {
+    padding: 60px 0 56px 80px;
+    width: 200px;
+    position: static;
+  }
+  @include v.min-width(medium-desktop) {
+    padding-top: 137px;
+  }
+}
+
+.numbers {
+  font-size: 14px;
+  color: v.c(blue1);
+  margin-bottom: 10px;
+  line-height: 18.12px;
+  @include v.min-width(ipad) {
+    margin-bottom: 20px;
+  }
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: transparent;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(v.c(blue1), 0.5);
+  cursor: pointer;
+  transition: background-color v.$fast;
+
+  &:before {
+    content: "";
+    mask: url("../../images/arrow.svg") no-repeat center;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: v.c(blue1);
+    transition: background-color v.$fast;
+    transform: scale(0.5);
+  }
+
+  &:hover:not([disabled]) {
+    background-color: v.c(white);
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  @include v.min-width(ipad) {
+    width: 50px;
+    height: 50px;
+
+    &:before {
+      width: 100%;
+      height: 100%;
+      transform: scale(1);
+    }
+  }
+}
+
+.button-next {
+  transform: rotate(180deg);
+}

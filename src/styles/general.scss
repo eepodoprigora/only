@@ -1,0 +1,24 @@
+@use "./vars" as v;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overscroll-behavior: none;
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  font-size: v.$bodyFontSize;
+  font-family: v.$baseFontFamily;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-style: normal;
+}

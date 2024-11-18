@@ -1,0 +1,40 @@
+@use "../../styles/vars" as v;
+
+.main {
+  padding-top: 100px;
+  display: flex;
+  padding-bottom: 32px;
+  justify-content: center;
+  width: 100%;
+
+  @include v.min-width(ipad) {
+    display: none;
+  }
+}
+
+.button {
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: none;
+  padding: 0;
+
+  &:before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: v.c(blue1);
+    opacity: 0.4;
+    transition: opacity v.$fast;
+  }
+
+  &.button-active {
+    &:before {
+      opacity: 1;
+    }
+  }
+}

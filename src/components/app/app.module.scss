@@ -1,0 +1,60 @@
+@use "../../styles/vars" as v;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  overflow: hidden;
+  max-width: 1440px;
+  min-width: 320px;
+  margin: 0 auto;
+  border: 1px solid rgba(v.c(blue1), 0.1);
+  border-top: none;
+  border-bottom: none;
+  position: relative;
+  min-height: 100vh;
+
+  @include v.min-width(medium) {
+    min-height: 1080px;
+    padding-top: 170px;
+    &:before {
+      content: "";
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      background-color: rgba(v.c(blue1), 0.1);
+    }
+  }
+}
+
+.container {
+  background-color: v.c(beige1);
+
+  @include v.min-width(large) {
+    padding: 0 160px 0 320px;
+  }
+}
+
+.mobile-hidden {
+  display: none;
+
+  @include v.min-width(ipad) {
+    display: block;
+  }
+}
+
+.desktop-hidden {
+  display: block;
+
+  @include v.min-width(ipad) {
+    display: none;
+  }
+}
+
+.mobile-flex {
+  display: flex;
+  position: relative;
+}

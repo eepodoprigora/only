@@ -1,0 +1,33 @@
+@use "../../styles/vars" as v;
+
+.header {
+  position: relative;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  color: v.c(blue1);
+  padding-left: 20px;
+  max-width: 150px;
+
+  @include v.min-width(mobile-big) {
+    font-size: 42px;
+    line-height: 45px;
+  }
+
+  @include v.min-width(ipad) {
+    max-width: 433px;
+    font-size: 56px;
+    line-height: 67.2px;
+    padding-left: 80px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 7px;
+      bottom: 7px;
+      left: 0;
+      width: 5px;
+      background: linear-gradient(180deg, #3877ee -5%, #ef5da8 85%);
+    }
+  }
+}

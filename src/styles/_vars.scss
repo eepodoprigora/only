@@ -1,0 +1,47 @@
+@use "sass:map";
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Sans:wght@400;700&display=swap");
+
+$baseFontFamily: "PT Sans", sans-serif;
+
+$bodyFontSize: 20px;
+
+$colors: (
+  blue1: #42567a,
+  blue2: #5d5fef,
+  blue3: #303e58,
+  blue4: #3877ee,
+  pink1: #ef5da8,
+  white: #ffffff,
+  beige1: #f4f5f9,
+  beige2: #c7cdd9,
+);
+
+// screen sizes
+
+$breakpoints: (
+  mobile: 320px,
+  mobile-big: 480px,
+  ipad: 768px,
+  medium: 1024px,
+  medium-desktop: 1200px,
+  large: 1920px,
+);
+
+// transition
+$fast: 0.3s;
+
+@function c($string) {
+  @return map.get($colors, $string);
+}
+
+@mixin min-width($breakpoint) {
+  $min-width: map-get($breakpoints, $breakpoint);
+  @if $min-width {
+    @media (min-width: $min-width) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} not found in $breakpoints map.";
+  }
+}

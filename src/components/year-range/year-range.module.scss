@@ -1,0 +1,38 @@
+@use "../../styles/vars" as v;
+
+.main {
+  display: flex;
+  letter-spacing: -0.02px;
+  margin: 0 auto;
+  font-weight: 700;
+  padding: 56px 20px;
+  justify-content: space-between;
+  font-size: 56px;
+  line-height: 72.5px;
+  width: 100%;
+
+  @include v.min-width(mobile-big) {
+    justify-content: space-evenly;
+  }
+
+  @include v.min-width(ipad) {
+    font-size: 100px;
+    line-height: 90px;
+    padding: 96px 0 0 0;
+  }
+  @include v.min-width(medium-desktop) {
+    justify-content: space-between;
+    width: 973px;
+
+    font-size: 200px;
+    line-height: 160px;
+  }
+}
+
+.start {
+  color: v.c(blue2);
+}
+
+.end {
+  color: v.c(pink1);
+}
