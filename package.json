@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "author": "Evgenia Podoprigora",
   "private": true,
+  "homepage": "https://eepodoprigora.github.io/only/",
   "dependencies": {
     "gsap": "^3.12.5",
     "react": "^18.3.1",

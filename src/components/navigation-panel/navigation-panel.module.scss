@@ -6,12 +6,12 @@
   left: 20px;
   width: 53px;
 
-  @include v.min-width(ipad) {
+  @include v.min-width(sm) {
     padding: 60px 0 56px 80px;
     width: 200px;
     position: static;
   }
-  @include v.min-width(medium-desktop) {
+  @include v.min-width(ml) {
     padding-top: 137px;
   }
 }
@@ -21,7 +21,7 @@
   color: v.c(blue1);
   margin-bottom: 10px;
   line-height: 18.12px;
-  @include v.min-width(ipad) {
+  @include v.min-width(sm) {
     margin-bottom: 20px;
   }
 }
@@ -66,7 +66,7 @@
     cursor: default;
   }
 
-  @include v.min-width(ipad) {
+  @include v.min-width(sm) {
     width: 50px;
     height: 50px;
 

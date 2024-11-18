@@ -5,7 +5,7 @@ import { historicPeriods } from "../../data";
 import { AppHeader } from "../app-header/app-header";
 import { YearRange } from "../year-range/year-range";
 import { Circle } from "../circle/circle";
-import { SliderButtonsMob } from "../slider-buttons-mob/slider-buttons-mob";
+import { CircleButtonsMob } from "../circle-buttons-mob/circle-buttons-mob";
 import { Slider } from "../slider/slider";
 import { NavigationPanel } from "../navigation-panel/navigation-panel";
 
@@ -131,7 +131,7 @@ export const App = () => {
               loadPeriod={loadPeriod}
             />
           </div>
-          <SliderButtonsMob
+          <CircleButtonsMob
             eventsCount={eventsCount}
             currentIndex={currentIndex}
             loadPeriod={loadPeriod}

@@ -11,16 +11,16 @@
   line-height: 72.5px;
   width: 100%;
 
-  @include v.min-width(mobile-big) {
+  @include v.min-width(s) {
     justify-content: space-evenly;
   }
 
-  @include v.min-width(ipad) {
+  @include v.min-width(sm) {
     font-size: 100px;
     line-height: 90px;
     padding: 96px 0 0 0;
   }
-  @include v.min-width(medium-desktop) {
+  @include v.min-width(ml) {
     justify-content: space-between;
     width: 973px;
 

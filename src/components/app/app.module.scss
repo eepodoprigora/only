@@ -14,7 +14,7 @@
   position: relative;
   min-height: 100vh;
 
-  @include v.min-width(medium) {
+  @include v.min-width(m) {
     min-height: 1080px;
     padding-top: 170px;
     &:before {
@@ -33,7 +33,7 @@
 .container {
   background-color: v.c(beige1);
 
-  @include v.min-width(large) {
+  @include v.min-width(l) {
     padding: 0 160px 0 320px;
   }
 }
@@ -41,7 +41,7 @@
 .mobile-hidden {
   display: none;
 
-  @include v.min-width(ipad) {
+  @include v.min-width(sm) {
     display: block;
   }
 }
@@ -49,7 +49,7 @@
 .desktop-hidden {
   display: block;
 
-  @include v.min-width(ipad) {
+  @include v.min-width(sm) {
     display: none;
   }
 }

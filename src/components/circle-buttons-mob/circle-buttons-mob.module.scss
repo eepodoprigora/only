@@ -7,7 +7,7 @@
   justify-content: center;
   width: 100%;
 
-  @include v.min-width(ipad) {
+  @include v.min-width(sm) {
     display: none;
   }
 }

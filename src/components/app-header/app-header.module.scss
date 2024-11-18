@@ -9,12 +9,12 @@
   padding-left: 20px;
   max-width: 150px;
 
-  @include v.min-width(mobile-big) {
+  @include v.min-width(s) {
     font-size: 42px;
     line-height: 45px;
   }
 
-  @include v.min-width(ipad) {
+  @include v.min-width(sm) {
     max-width: 433px;
     font-size: 56px;
     line-height: 67.2px;

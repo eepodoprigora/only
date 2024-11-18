@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Swiper as SwiperType } from "swiper";
+import { Swiper as SwiperCore } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -13,7 +13,6 @@ import s from "./slider.module.scss";
 interface SliderProps {
   currentIndex: number;
   historicPeriods: TimePeriod[];
-  // sliderContainerRef: React.RefObject<HTMLDivElement>;
   sliderVisibility: boolean;
 }
 
@@ -23,17 +22,15 @@ export const Slider = ({
   sliderVisibility,
 }: SliderProps) => {
   const [sliderIndex, setSliderIndex] = useState<number>(0);
-
+  const swiperRef = useRef<SwiperCore | null>(null);
   const slidesPerViewDesktop = 3;
-  const lastSwipeVisible = Math.ceil(
-    historicPeriods[currentIndex].events.length / slidesPerViewDesktop
-  );
 
   return (
     <div className={`${s.main} ${sliderVisibility ? s.animated : ""}`}>
       <h2 className={s.title}>{historicPeriods[currentIndex].label}</h2>
 
       <Swiper
+        onSwiper={(swiper: SwiperCore) => (swiperRef.current = swiper)}
         className={s.slider}
         modules={[Navigation]}
         spaceBetween={25}
@@ -42,7 +39,7 @@ export const Slider = ({
           768: { slidesPerView: 2, spaceBetween: 50 },
           1024: { slidesPerView: slidesPerViewDesktop, spaceBetween: 80 },
         }}
-        onSlideChange={(swiper: SwiperType) => {
+        onSlideChange={(swiper: SwiperCore) => {
           setSliderIndex(swiper.activeIndex);
         }}
         navigation={{
@@ -58,6 +55,7 @@ export const Slider = ({
           </SwiperSlide>
         ))}
       </Swiper>
+
       <div className={s.buttons}>
         <div
           className={`${s["button-wrapper"]} ${
@@ -66,8 +64,11 @@ export const Slider = ({
           <button className={`${s.button} ${s["button-prev"]} button-prev`} />
         </div>
         <div
-          className={`${s["button-wrapper"]} ${s["button-wrapper-next"]}  ${
-            sliderIndex === lastSwipeVisible ? s.disabled : ""
+          className={`${s["button-wrapper"]} ${s["button-wrapper-next"]} ${
+            swiperRef.current &&
+            swiperRef.current.snapGrid.length - 1 === sliderIndex
+              ? s.disabled
+              : ""
           }`}>
           <button className={`${s.button} ${s["button-next"]} button-next`} />
         </div>

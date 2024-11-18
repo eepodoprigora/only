@@ -1,16 +1,16 @@
-import s from "./slider-buttons-mob.module.scss";
+import s from "./circle-buttons-mob.module.scss";
 
-interface SliderButtonsMobProps {
+interface CircleButtonsMobProps {
   eventsCount: number;
   currentIndex: number;
   loadPeriod: (targetIndex: number) => void;
 }
 
-export const SliderButtonsMob = ({
+export const CircleButtonsMob = ({
   eventsCount,
   currentIndex,
   loadPeriod,
-}: SliderButtonsMobProps) => (
+}: CircleButtonsMobProps) => (
   <div className={s.main}>
     {Array.from({ length: eventsCount }).map((_, index) => (
       <button

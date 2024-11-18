@@ -18,7 +18,7 @@
     transform: translateY(-50%);
   }
 
-  @include v.min-width(medium-desktop) {
+  @include v.min-width(ml) {
     display: block;
   }
 }
@@ -32,10 +32,10 @@
   display: none;
   opacity: 0;
 
-  @include v.min-width(ipad) {
+  @include v.min-width(sm) {
     display: block;
   }
-  @include v.min-width(medium-desktop) {
+  @include v.min-width(ml) {
     display: none;
   }
 

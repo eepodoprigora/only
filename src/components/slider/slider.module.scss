@@ -21,7 +21,7 @@
     }
   }
 
-  @include v.min-width(ipad) {
+  @include v.min-width(sm) {
     padding-left: 80px;
     padding-right: 160px;
     margin-bottom: 104px;
@@ -45,7 +45,7 @@
     background: v.c(beige2);
   }
 
-  @include v.min-width(ipad) {
+  @include v.min-width(sm) {
     display: none;
   }
 }
@@ -65,8 +65,9 @@
       rgba(244, 245, 249, 0) 100%
     );
     z-index: 2;
+    pointer-events: none;
   }
-  @include v.min-width(ipad) {
+  @include v.min-width(sm) {
     &::before {
       display: none;
     }
@@ -85,7 +86,7 @@
   padding: 0 40px;
   display: none;
 
-  @include v.min-width(medium) {
+  @include v.min-width(m) {
     display: flex;
   }
 }
@@ -158,7 +159,7 @@
   font-family: "Bebas Neue", sans-serif;
   margin-bottom: 15px;
 
-  @include v.min-width(ipad) {
+  @include v.min-width(sm) {
     font-size: 25px;
     line-height: 30px;
   }
@@ -169,7 +170,7 @@
   line-height: 20px;
   color: v.c(blue1);
 
-  @include v.min-width(ipad) {
+  @include v.min-width(sm) {
     font-size: 20px;
     line-height: 30px;
   }

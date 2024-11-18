@@ -20,12 +20,11 @@ $colors: (
 // screen sizes
 
 $breakpoints: (
-  mobile: 320px,
-  mobile-big: 480px,
-  ipad: 768px,
-  medium: 1024px,
-  medium-desktop: 1200px,
-  large: 1920px,
+  s: 480px,
+  sm: 768px,
+  m: 1024px,
+  ml: 1200px,
+  l: 1920px,
 );
 
 // transition
